@@ -391,6 +391,7 @@
 
     .d-card img,
     .d-card .img-placeholder {
+      position: relative;
       width: 100%;
       flex: 1;
       min-height: 0;
@@ -398,14 +399,20 @@
       display: block;
       filter: grayscale(15%);
       transition: filter 0.4s, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform-origin: center top;
+      z-index: 0;
     }
 
     .d-card:hover img,
     .d-card:hover .img-placeholder {
       filter: grayscale(0%);
+      transform: scale(1.04);
     }
 
     .d-card-meta {
+      position: relative;
+      z-index: 2;
+      background: var(--off-white);
       padding: 16px 20px 20px;
       border-top: 1px solid var(--black);
       height: 72px;
