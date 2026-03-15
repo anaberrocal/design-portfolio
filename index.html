@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ana Berrocal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@1&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --black: #0e0e0c;
       --tan: #d4cfc4;
       --off-white: #f2ede4;
-      --white: #faf8f4;
       --green: #b0f000;
       --gray: #8a8880;
       --mid: #c0bbb0;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--off-white);
@@ -30,46 +39,80 @@
     }
 
     .cursor {
-      width: 8px; height: 8px;
+      width: 8px;
+      height: 8px;
       background: var(--green);
       border-radius: 50%;
-      position: fixed; top: 0; left: 0;
-      pointer-events: none; z-index: 9999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
       transition: transform 0.1s ease;
     }
+
     .cursor-ring {
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       border: 1px solid var(--black);
       border-radius: 50%;
-      position: fixed; top: 0; left: 0;
-      pointer-events: none; z-index: 9998;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9998;
       transition: all 0.15s ease;
     }
 
     /* NAV */
     nav {
-      position: fixed; top: 0; left: 0; right: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 20px 40px;
       border-bottom: 1px solid var(--black);
       background: var(--off-white);
     }
+
     .nav-logo {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 14px; letter-spacing: 0.04em;
-      color: var(--black); text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      text-decoration: none;
       text-transform: uppercase;
     }
-    .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
     .nav-links a {
-      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--black); text-decoration: none; font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      font-weight: 400;
       transition: color 0.15s;
     }
-    .nav-links a:hover { color: var(--gray); }
+
+    .nav-links a:hover {
+      color: var(--gray);
+    }
+
     .nav-tag {
-      font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--gray);
     }
 
@@ -124,7 +167,8 @@
     }
 
     .hero-green-dot {
-      width: 10px; height: 10px;
+      width: 10px;
+      height: 10px;
       background: var(--green);
       border-radius: 50%;
       border: 1px solid var(--black);
@@ -181,20 +225,47 @@
     }
 
     .hero-image-center img,
-    .hero-image-center .img-placeholder {
-      width: 100%; height: 100%; object-fit: cover;
+    .hero-image-center {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* bracket corners */
     .bracket {
       position: absolute;
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       z-index: 2;
     }
-    .bracket-tl { top: 12px; left: 12px; border-top: 1.5px solid var(--green); border-left: 1.5px solid var(--green); }
-    .bracket-tr { top: 12px; right: 12px; border-top: 1.5px solid var(--green); border-right: 1.5px solid var(--green); }
-    .bracket-bl { bottom: 12px; left: 12px; border-bottom: 1.5px solid var(--green); border-left: 1.5px solid var(--green); }
-    .bracket-br { bottom: 12px; right: 12px; border-bottom: 1.5px solid var(--green); border-right: 1.5px solid var(--green); }
+
+    .bracket-tl {
+      top: 12px;
+      left: 12px;
+      border-top: 1.5px solid var(--green);
+      border-left: 1.5px solid var(--green);
+    }
+
+    .bracket-tr {
+      top: 12px;
+      right: 12px;
+      border-top: 1.5px solid var(--green);
+      border-right: 1.5px solid var(--green);
+    }
+
+    .bracket-bl {
+      bottom: 12px;
+      left: 12px;
+      border-bottom: 1.5px solid var(--green);
+      border-left: 1.5px solid var(--green);
+    }
+
+    .bracket-br {
+      bottom: 12px;
+      right: 12px;
+      border-bottom: 1.5px solid var(--green);
+      border-right: 1.5px solid var(--green);
+    }
 
     /* Hero bottom marquee */
     .hero-strip {
@@ -219,12 +290,20 @@
       border-right: 1px solid var(--mid);
       white-space: nowrap;
     }
-    .strip-item.accent { color: var(--black); font-weight: 500; }
-    .strip-item.green { color: var(--green); font-weight: 500; -webkit-text-stroke: 0.5px var(--black); }
+
+    .strip-item.accent {
+      color: var(--black);
+      font-weight: 500;
+    }
 
     @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
     }
 
     /* DESIGN WORK */
@@ -279,30 +358,60 @@
       position: relative;
       overflow: hidden;
       border-right: 1px solid var(--black);
+      display: flex;
+      flex-direction: column;
     }
-    .d-card:last-child { border-right: none; }
 
-    .d-card:nth-child(1) { grid-column: span 7; border-bottom: 1px solid var(--black); }
-    .d-card:nth-child(2) { grid-column: span 5; border-bottom: 1px solid var(--black); }
-    .d-card:nth-child(3) { grid-column: span 4; }
-    .d-card:nth-child(4) { grid-column: span 4; }
-    .d-card:nth-child(5) { grid-column: span 4; border-right: none; }
+    .d-card:last-child {
+      border-right: none;
+    }
 
-    .d-card img, .d-card .img-placeholder {
+    .d-card:nth-child(1) {
+      grid-column: span 7;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .d-card:nth-child(2) {
+      grid-column: span 5;
+      border-bottom: 1px solid var(--black);
+    }
+
+    .d-card:nth-child(3) {
+      grid-column: span 4;
+    }
+
+    .d-card:nth-child(4) {
+      grid-column: span 4;
+    }
+
+    .d-card:nth-child(5) {
+      grid-column: span 4;
+      border-right: none;
+    }
+
+    .d-card img,
+    .d-card .img-placeholder {
       width: 100%;
-      aspect-ratio: 4/3;
+      flex: 1;
+      min-height: 0;
       object-fit: cover;
       display: block;
       filter: grayscale(15%);
-      transition: filter 0.4s, transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+      transition: filter 0.4s, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
+
     .d-card:hover img,
-    .d-card:hover .img-placeholder { filter: grayscale(0%); }
+    .d-card:hover .img-placeholder {
+      filter: grayscale(0%);
+    }
 
     .d-card-meta {
       padding: 16px 20px 20px;
       border-top: 1px solid var(--black);
+      height: 72px;
+      overflow: hidden;
     }
+
     .d-card-label {
       font-size: 8px;
       letter-spacing: 0.18em;
@@ -310,6 +419,7 @@
       color: var(--gray);
       margin-bottom: 4px;
     }
+
     .d-card-title {
       font-family: 'Archivo Black', sans-serif;
       font-size: 14px;
@@ -318,7 +428,9 @@
     }
 
     /* PHOTOGRAPHY */
-    #photography { border-top: 1px solid var(--black); }
+    #photography {
+      border-top: 1px solid var(--black);
+    }
 
     .photo-grid {
       display: grid;
@@ -326,39 +438,43 @@
       border-bottom: 1px solid var(--black);
     }
 
-.photo-cell {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid var(--black);
-  border-bottom: 1px solid var(--black);
-}
-.photo-cell:nth-child(5n) { border-right: none; }
+    .photo-cell {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--black);
+      border-bottom: 1px solid var(--black);
+    }
 
-.photo-cell-img-wrap {
-  overflow: hidden;
-  flex: 1;
-  min-height: 0;
-}
+    .photo-cell:nth-child(5n) {
+      border-right: none;
+    }
 
-.photo-cell-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
-  filter: grayscale(20%);
-}
+    .photo-cell-img-wrap {
+      overflow: hidden;
+      flex: 1;
+      min-height: 0;
+    }
 
-.photo-cell:hover .photo-cell-img-wrap img {
-  transform: scale(1.04);
-  filter: grayscale(0%);
-}
+    .photo-cell-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      filter: grayscale(20%);
+    }
+
+    .photo-cell:hover .photo-cell-img-wrap img {
+      transform: scale(1.04);
+      filter: grayscale(0%);
+    }
 
     .photo-cell-meta {
       padding: 12px 16px 14px;
       border-top: 1px solid var(--black);
     }
+
     .photo-cell-caption {
       font-size: 8px;
       letter-spacing: 0.16em;
@@ -366,25 +482,27 @@
       color: var(--gray);
     }
 
-.photo-sub-head {
-  padding: 14px 40px;
-  border-bottom: 1px solid var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.photo-sub-label {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
+    .photo-sub-head {
+      padding: 14px 40px;
+      border-bottom: 1px solid var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .photo-sub-label {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
     /* featured large photo */
     .photo-featured {
       grid-column: span 2;
       grid-row: span 2;
     }
+
     .photo-featured img,
     .photo-featured .img-placeholder {
       aspect-ratio: unset;
@@ -392,7 +510,9 @@
     }
 
     /* SKILLS */
-    #skills { border-top: 1px solid var(--black); }
+    #skills {
+      border-top: 1px solid var(--black);
+    }
 
     .skills-grid {
       display: grid;
@@ -404,49 +524,69 @@
       padding: 40px 36px 48px;
       border-right: 1px solid var(--black);
     }
-    .skill-cell:last-child { border-right: none; }
+
+    .skill-cell:last-child {
+      border-right: none;
+    }
 
     .skill-num {
-      font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--gray); margin-bottom: 20px;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 20px;
     }
 
     .skill-title {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 18px; line-height: 1.2;
-      text-transform: uppercase; margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      margin-bottom: 16px;
     }
 
-    .skill-title span { color: var(--green); -webkit-text-stroke: 1px var(--black); }
+    .skill-title span {
+      color: var(--green);
+      -webkit-text-stroke: 1px var(--black);
+    }
 
     .skill-desc {
-      font-size: 12px; line-height: 1.75; color: var(--gray);
+      font-size: 12px;
+      line-height: 1.75;
+      color: var(--gray);
       margin-bottom: 24px;
     }
 
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
     .skill-tag {
-      font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       padding: 5px 10px;
       border: 1px solid var(--black);
       color: var(--black);
     }
 
     /* ABOUT */
-#about {
-  border-top: 1px solid var(--black);
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  max-height: 645px;
-}
+    #about {
+      border-top: 1px solid var(--black);
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      max-height: 645px;
+    }
 
-.about-left {
-  border-right: 1px solid var(--black);
-  padding: 40px 48px;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: space-between;
-}
+    .about-left {
+      border-right: 1px solid var(--black);
+      padding: 40px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
     .about-quote {
       font-family: 'DM Serif Display', serif;
@@ -458,31 +598,36 @@
     }
 
     .about-body {
-      font-size: 12px; line-height: 1.85; color: var(--gray);
+      font-size: 12px;
+      line-height: 1.85;
+      color: var(--gray);
     }
 
-.about-right {
-  position: relative; 
-  overflow: hidden;
-  height: 100%;
-  align-self: start;
-  margin-top: 0;
-}
+    .about-right {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      align-self: start;
+      margin-top: 0;
+    }
 
-.about-right img,
-.about-right .img-placeholder {
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  object-position: center;
-}
+    .about-right img,
+    .about-right .img-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
 
     .about-tag {
-      position: absolute; bottom: 32px; left: 32px;
+      position: absolute;
+      bottom: 32px;
+      left: 32px;
       background: var(--green);
       color: var(--black);
       font-family: 'Archivo Black', sans-serif;
-      font-size: 10px; letter-spacing: 0.12em;
+      font-size: 10px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       padding: 6px 14px;
       border: 1px solid var(--black);
@@ -511,100 +656,294 @@
       margin-bottom: 48px;
     }
 
-    .contact-headline span { color: var(--green); -webkit-text-stroke: 1px var(--black); }
+    .contact-headline span {
+      color: var(--green);
+      -webkit-text-stroke: 1px var(--black);
+    }
 
     .contact-right {
       padding-left: 64px;
-      display: flex; flex-direction: column; justify-content: flex-end;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
 
-    .contact-links { display: flex; flex-direction: column; gap: 0; }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
 
     .contact-link {
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 20px 0;
       border-bottom: 1px solid var(--black);
       font-family: 'Archivo Black', sans-serif;
-      font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase;
-      color: var(--black); text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
       transition: background 0.2s, padding 0.2s;
     }
-    .contact-link:hover { color: var(--gray); }
-    .contact-link-arrow { font-size: 18px; }
+
+    .contact-link:hover {
+      color: var(--gray);
+    }
+
+    .contact-link-arrow {
+      font-size: 18px;
+    }
 
     /* FOOTER */
     footer {
       background: var(--black);
       padding: 24px 40px;
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       border-top: 1px solid var(--black);
     }
+
     .footer-logo {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 14px; color: var(--off-white);
-      letter-spacing: 0.04em; text-transform: uppercase;
+      font-size: 14px;
+      color: var(--off-white);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
-    .footer-copy { font-size: 9px; color: var(--gray); letter-spacing: 0.12em; text-transform: uppercase; }
+
+    .footer-copy {
+      font-size: 9px;
+      color: var(--gray);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
     .footer-green {
-      width: 8px; height: 8px;
-      background: var(--green); border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
     }
 
     /* REVEAL */
     .reveal {
-      opacity: 0; transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
 
     .img-placeholder {
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: var(--tan);
-      color: var(--mid); font-size: 9px;
-      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--mid);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
     .about-head {
+      grid-column: span 2;
+      border-bottom: 1px solid var(--black);
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        padding: 16px 20px;
+      }
+
+      .nav-links li:not(:last-child) {
+        display: none;
+      }
+
+      .hero-masthead {
+        padding: 32px 20px 0;
+      }
+
+      .hero-body {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-info-left,
+      .hero-info-right {
+        display: none;
+      }
+
+      #design,
+      #photography,
+      #contact {
+        padding: 0;
+      }
+
+      .design-editorial {
+        grid-template-columns: 1fr;
+      }
+
+      .d-card:nth-child(n) {
+        grid-column: span 1;
+        border-right: none;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .photo-featured {
         grid-column: span 2;
-        border-bottom: 1px solid var(--black);
-}
+      }
 
-@media (max-width: 900px) {
-  nav { padding: 16px 20px; }
-  .nav-links li:not(:last-child) { display: none; }
-  .hero-masthead { padding: 32px 20px 0; }
-  .hero-body { grid-template-columns: 1fr; }
-  .hero-info-left, .hero-info-right { display: none; }
-  #design, #photography, #contact { padding: 0; }
-  .design-editorial { grid-template-columns: 1fr; }
-  .d-card:nth-child(n) { grid-column: span 1; border-right: none; }
-  .photo-grid { grid-template-columns: 1fr 1fr; }
-  .photo-featured { grid-column: span 2; }
-  .skills-grid { grid-template-columns: 1fr; }
-  #contact { grid-template-columns: 1fr; padding: 60px 20px; }
-  .contact-left { border-right: none; padding-right: 0; margin-bottom: 48px; }
-  .contact-right { padding-left: 0; }
-  .section-head { padding: 20px; }
-  .hero-center-col { padding: 0 4px 12px; }
-  .about-head { grid-column: span 2; }
-}
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
 
-@media (max-width: 600px) {
-  #about { grid-template-columns: 1fr; max-height: unset; }
-  .about-head { grid-column: span 1; }
-  .about-left { border-right: none; padding: 32px 24px; }
-  .about-right {
-    height: 300px;
-    width: 100%;
-    align-self: auto;
-    margin: 0 auto;
-    border: 1px solid var(--black);
-  }
-}
+      #contact {
+        grid-template-columns: 1fr;
+        padding: 60px 20px;
+      }
+
+      .contact-left {
+        border-right: none;
+        padding-right: 0;
+        margin-bottom: 48px;
+      }
+
+      .contact-right {
+        padding-left: 0;
+      }
+
+      .section-head {
+        padding: 20px;
+      }
+
+      .hero-center-col {
+        padding: 0 4px 12px;
+      }
+
+      .about-head {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #about {
+        grid-template-columns: 1fr;
+        max-height: unset;
+      }
+
+      .about-head {
+        grid-column: span 1;
+      }
+
+      .about-left {
+        border-right: none;
+        padding: 32px 24px;
+      }
+
+      .about-right {
+        height: 300px;
+        width: 100%;
+        align-self: auto;
+        margin: 0 auto;
+        border: 1px solid var(--black);
+      }
+    }
+
+    @media (hover: none) {
+
+      .cursor,
+      .cursor-ring {
+        display: none;
+      }
+
+      body {
+        cursor: auto;
+      }
+    }
+
+    /* LIGHTBOX */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(14, 14, 12, 0.95);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .lightbox-inner img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      filter: none;
+    }
+
+    .lightbox-inner iframe {
+      width: 80vw;
+      height: 90vh;
+      border: none;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .lightbox-close:hover {
+      color: var(--green);
+    }
+
+    .photo-cell-img-wrap,
+    .photo-cell-img-wrap img,
+    .photo-cell-meta {
+      pointer-events: none;
+    }
   </style>
 </head>
+
 <body>
 
   <div class="cursor" id="cursor"></div>
@@ -619,7 +958,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><span class="nav-tag">Brooklyn, NY   2026</span></li>
+      <li><span class="nav-tag">Brooklyn, NY 2026</span></li>
     </ul>
   </nav>
 
@@ -630,7 +969,7 @@
       <div class="hero-name-left">ANA</div>
       <div class="hero-center-col">
         <div class="hero-green-dot"></div>
-        <div class="hero-descriptor">Designer &amp; Photographer</div>
+        <div class="hero-descriptor">Product Designer &amp; Creative</div>
       </div>
       <div class="hero-name-right">BERROCAL</div>
     </div>
@@ -646,7 +985,8 @@
           <div class="info-label">Discipline</div>
           <div class="info-value">Product Design<br>Photography<br>Frontend Development</div>
         </div>
-        <div class="info-text">Craft-driven design at the intersection of visual storytelling and frontend development.</div>
+        <div class="info-text">Craft-driven design at the intersection of visual storytelling and frontend development.
+        </div>
       </div>
 
       <div class="hero-image-center">
@@ -654,7 +994,7 @@
         <div class="bracket bracket-tr"></div>
         <div class="bracket bracket-bl"></div>
         <div class="bracket bracket-br"></div>
-        <img src="/images/IMG_4207_jpg.JPG"/>
+        <img src="/images/IMG_4207_jpg.JPG" />
       </div>
 
       <div class="hero-info-right">
@@ -708,181 +1048,185 @@
   <section id="design">
     <div class="section-head reveal">
       <div class="section-head-left">
-        <span class="section-num">01  </span>
+        <span class="section-num">01</span>
         <h2 class="section-title">Design Work</h2>
       </div>
       <span class="section-head-right">Selected projects</span>
     </div>
     <div class="design-editorial">
-      <div class="d-card reveal reveal-delay-1">
-        <img src="images/marketing-page.png" alt="United Airlines CCS+ App Campaign"/>
+      <div class="d-card reveal reveal-delay-1" data-lightbox="images/marketing-page.png">
+        <img src="images/marketing-page.png" alt="United Airlines CCS+ App Campaign" />
         <div class="d-card-meta">
           <div class="d-card-label">United Airlines &middot; Digital Marketing &middot; 2024</div>
           <div class="d-card-title">CCS+ App Campaign</div>
         </div>
       </div>
-      <div class="d-card reveal reveal-delay-2">
-        <div class="img-placeholder" style="aspect-ratio:16/9;">[ CCS+ Mobile App ]</div>
+      <div class="d-card reveal reveal-delay-2" data-lightbox="images/mobile-screens-2.png">
+        <img src="images/mobile-screens-2.png" alt="United Airlines Native Mobile App" />
         <div class="d-card-meta">
           <div class="d-card-label">United Airlines &middot; iOS &amp; Android</div>
           <div class="d-card-title">CCS+ Mobile App</div>
         </div>
       </div>
-      <div class="d-card reveal">
-        <img src="images/cloud-kitchen.png" alt="Cloud Studio Kitchens Social Campaign"/>
+      <div class="d-card reveal" data-lightbox="images/cloud-kitchen.png">
+        <img src="images/cloud-kitchen.png" alt="Cloud Studio Kitchens Social Campaign" />
         <div class="d-card-meta">
           <div class="d-card-label">Cloud Studio Kitchens &middot; Brand</div>
           <div class="d-card-title">Social Campaign</div>
         </div>
       </div>
-      <div class="d-card reveal reveal-delay-1">
-        <div class="img-placeholder" style="aspect-ratio:4/3;">[ UI Design ]</div>
+      <div class="d-card reveal reveal-delay-1" data-lightbox="images/trade-board.png">
+        <img src="images/trade-board.png" alt="Trade Board" />
         <div class="d-card-meta">
-          <div class="d-card-label">Feature 23 &middot; Mobile &amp; Desktop</div>
+          <div class="d-card-label">United Airlines &middot; Mobile &amp; Desktop</div>
           <div class="d-card-title">Product UI</div>
         </div>
       </div>
-      <div class="d-card reveal reveal-delay-2">
-        <div class="img-placeholder" style="aspect-ratio:4/3;">[ More Work ]</div>
+      <div class="d-card reveal reveal-delay-2" data-lightbox-pdf="images/Download-Page_Android-Guide.pdf">
+        <img src="images/product-guide-screenshot.png" alt="Product Guide" />
         <div class="d-card-meta">
-          <div class="d-card-label">Various &middot; 2020 Present</div>
-          <div class="d-card-title">Visual Design</div>
+          <div class="d-card-label">CCS+</div>
+          <div class="d-card-title">Product Guide</div>
         </div>
       </div>
     </div>
   </section>
 
-<!-- PHOTOGRAPHY -->
-<section id="photography">
-  <div class="section-head reveal">
-    <div class="section-head-left">
-      <span class="section-num">02</span>
-      <h2 class="section-title">Photography</h2>
+  <!-- PHOTOGRAPHY -->
+  <section id="photography">
+    <div class="section-head reveal">
+      <div class="section-head-left">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Photography</h2>
+      </div>
+      <span class="section-head-right">Portrait &amp; Street &middot; New York City</span>
     </div>
-    <span class="section-head-right">Portrait &amp; Street &middot; New York City</span>
-  </div>
 
-  <!-- Portraits -->
-  <div class="photo-sub-head">
-    <span class="photo-sub-label">Portraits</span>
-  </div>
-  <div class="photo-grid">
-    <div class="photo-cell photo-featured" style="min-height:560px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/IMG_6382.JPG" alt="Portrait, Central Park NYC">
+    <!-- Portraits -->
+    <div class="photo-sub-head">
+      <span class="photo-sub-label">Portraits</span>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-cell photo-featured" data-lightbox="images/IMG_6382.JPG" style="min-height:560px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/IMG_6382.JPG" alt="Portrait, Central Park NYC">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">Central Park, NYC</div>
+        </div>
       </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">Central Park, NYC</div>
+      <div class="photo-cell" data-lightbox="images/IMG_6117.JPG" style="min-height:280px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/IMG_6117.JPG" alt="Portrait, Brooklyn">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">Central Park, NYC</div>
+        </div>
+      </div>
+      <div class="photo-cell" data-lightbox="images/IMG_5774.JPG" style="min-height:280px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/IMG_5774.JPG" alt="Studio Portrait">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">Harlem, NYC</div>
+        </div>
+      </div>
+      <div class="photo-cell" data-lightbox="images/IMG_6556.JPG" style="min-height:280px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/IMG_6556.JPG" alt="Portrait, Street">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">New York City</div>
+        </div>
+      </div>
+      <div class="photo-cell" data-lightbox="images/IMG_6669.JPG" style="min-height:280px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/IMG_6669.JPG" alt="Portrait, Brooklyn">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">Harlem, NYC</div>
+        </div>
       </div>
     </div>
-    <div class="photo-cell" style="min-height:280px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/IMG_6117.JPG" alt="Portrait, Brooklyn">
-      </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">Brooklyn, NY</div>
-      </div>
-    </div>
-    <div class="photo-cell" style="min-height:280px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/IMG_5774.JPG" alt="Studio Portrait">
-      </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">Studio, NYC</div>
-      </div>
-    </div>
-    <div class="photo-cell" style="min-height:280px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/IMG_6556.JPG" alt="Portrait, Street">
-      </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">New York City</div>
-      </div>
-    </div>
-    <div class="photo-cell" style="min-height:280px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/IMG_6669.JPG" alt="Portrait, Brooklyn">
-      </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">Brooklyn, NY</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Street & City -->
-  <div class="photo-sub-head" style="border-top: 1px solid var(--black);">
-    <span class="photo-sub-label">Street &amp; City</span>
-  </div>
-  <div class="photo-grid">
-    <div class="photo-cell photo-featured" style="min-height:560px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/37390020.JPG" alt="Brooklyn, 35mm Film">
+    <!-- Street & City -->
+    <div class="photo-sub-head" style="border-top: 1px solid var(--black);">
+      <span class="photo-sub-label">Street &amp; City</span>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-cell photo-featured" data-lightbox="images/37390020.JPG" style="min-height:560px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/37390020.JPG" alt="Brooklyn, 35mm Film">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">Brooklyn, NY &middot; 35mm Film</div>
+        </div>
       </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">Brooklyn, NY &middot; 35mm Film</div>
+      <div class="photo-cell" data-lightbox="images/37390022.JPG" style="min-height:280px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/37390022.JPG" alt="Ridgewood, Brooklyn">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">Ridgewood, NY &middot; 35mm Film</div>
+        </div>
+      </div>
+      <div class="photo-cell" data-lightbox="images/IMG_0965.JPG" style="min-height:280px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/IMG_0965.JPG" alt="NYC at Night">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">New York City &middot; Night</div>
+        </div>
+      </div>
+      <div class="photo-cell" data-lightbox="images/56340017.JPG" style="min-height:280px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/56340017.JPG" alt="NYC Architecture, 35mm Film">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">Brooklyn, NY &middot; 35mm Film</div>
+        </div>
+      </div>
+      <div class="photo-cell" data-lightbox="images/IMG_1674_jpg.JPG" style="min-height:280px;">
+        <div class="photo-cell-img-wrap">
+          <img src="images/IMG_1674_jpg.JPG" alt="NYC Skyline">
+        </div>
+        <div class="photo-cell-meta">
+          <div class="photo-cell-caption">Oculus &middot; New York City</div>
+        </div>
       </div>
     </div>
-    <div class="photo-cell" style="min-height:280px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/37390022.JPG" alt="Crown Heights, Brooklyn">
-      </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">Crown Heights, NY &middot; 35mm Film</div>
-      </div>
-    </div>
-    <div class="photo-cell" style="min-height:280px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/IMG_0965.JPG" alt="NYC at Night">
-      </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">New York City &middot; Night</div>
-      </div>
-    </div>
-    <div class="photo-cell" style="min-height:280px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/56340017.JPG" alt="NYC Architecture, 35mm Film">
-      </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">Brooklyn, NY &middot; 35mm Film</div>
-      </div>
-    </div>
-    <div class="photo-cell" style="min-height:280px;">
-      <div class="photo-cell-img-wrap">
-        <img src="images/IMG_1674_jpg.JPG" alt="NYC Skyline">
-      </div>
-      <div class="photo-cell-meta">
-        <div class="photo-cell-caption">Oculus &middot; New York City</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- SKILLS -->
   <section id="skills">
     <div class="section-head reveal">
       <div class="section-head-left">
-        <span class="section-num">03  </span>
+        <span class="section-num">03 </span>
         <h2 class="section-title">What I Bring</h2>
       </div>
       <span class="section-head-right">Skills &amp; disciplines</span>
     </div>
     <div class="skills-grid">
       <div class="skill-cell reveal">
-        <div class="skill-num">01   Visual Design</div>
+        <div class="skill-num">01 Visual Design</div>
         <h3 class="skill-title">Brand <span>&amp;</span> Systems</h3>
-        <p class="skill-desc">Cohesive visual systems that scale across digital and print   marketing pages to physical banners to social campaigns.</p>
+        <p class="skill-desc">Cohesive visual systems that scale across digital and print, from marketing pages and
+          physical banners to social campaigns. Every touchpoint, consistent.</p>
         <div class="skill-tags">
           <span class="skill-tag">Brand Identity</span>
           <span class="skill-tag">Design Systems</span>
+          <span class="skill-tag">Visual Direction</span>
           <span class="skill-tag">Marketing Design</span>
+          <span class="skill-tag">Copywriting</span>
           <span class="skill-tag">Adobe CC</span>
           <span class="skill-tag">Figma</span>
         </div>
       </div>
       <div class="skill-cell reveal reveal-delay-1">
-        <div class="skill-num">02   UX Design</div>
+        <div class="skill-num">02 UX Design</div>
         <h3 class="skill-title">Product <span>&amp;</span> Research</h3>
-        <p class="skill-desc">End-to-end product design across web, iOS, and Android. In-person user research and real-time iteration   then implement designs directly in code.</p>
+        <p class="skill-desc">End-to-end product design across web, iOS, and Android. In-person user research and
+          real-time iteration then implement designs directly in code.</p>
         <div class="skill-tags">
           <span class="skill-tag">Product Design</span>
           <span class="skill-tag">iOS &amp; Android</span>
@@ -892,9 +1236,10 @@
         </div>
       </div>
       <div class="skill-cell reveal reveal-delay-2">
-        <div class="skill-num">03   Engineering</div>
+        <div class="skill-num">03 Engineering</div>
         <h3 class="skill-title">Build <span>&amp;</span> Ship</h3>
-        <p class="skill-desc">I build what I design. Responsive, polished UI in HTML, CSS, React, and Angular. AI-assisted workflow for faster delivery without sacrificing craft.</p>
+        <p class="skill-desc">I build what I design. Responsive, polished UI in HTML, CSS, React, and Angular.
+          AI-assisted workflow for faster delivery without sacrificing craft.</p>
         <div class="skill-tags">
           <span class="skill-tag">React</span>
           <span class="skill-tag">Angular</span>
@@ -910,21 +1255,24 @@
   <section id="about">
     <div class="section-head reveal about-head">
       <div class="section-head-left">
-        <span class="section-num">04  </span>
+        <span class="section-num">04 </span>
         <h2 class="section-title">About</h2>
       </div>
     </div>
     <div class="about-left">
       <p class="about-quote reveal">
-        &ldquo;I design, I build, I photograph. Everything I make is grounded in craft and curiosity.&rdquo;
+        Ana Berrocal is a Product Designer and Creative based in Brooklyn, NY. With a background in frontend development
+        and photography, she brings both technical precision and a strong visual eye to every project.
       </p>
       <p class="about-body reveal reveal-delay-1">
-        Senior Product Designer based in Brooklyn. I have a background in frontend development and formal photography training at The Art Institute of Fort Lauderdale. I'm currently at United Airlines, where I have designed and shipped products for 15,000+ users, built component libraries from scratch, and performed in person user testing. My design work is driven by a desire to create meaningful, human-centered experiences with a high level of polish and attention to detail. My photography experience informs my design work and allows me to bring a unique perspective to visual storytelling. I'm always eager to take on new challenges and collaborate with others who share my passion for craft and creativity.
+        She has spent the last several years shipping digital products for tens of thousands of users, leading design
+        from concept through code. Currently at United Airlines, she owns end-to-end design for one of the company's
+        most critical platforms. She is always looking for the next thing to make better.
       </p>
     </div>
     <div class="about-right">
-      <img src="/images/IMG_0313-2.JPG" alt="Photo of Ana Berrocal"/>
-      <div class="about-tag">Brooklyn, NY</div>
+      <img src="/images/IMG_0313-2.jpg" alt="Photo of Ana Berrocal" />
+      <div class="about-tag">Available for work</div>
     </div>
   </section>
 
@@ -954,9 +1302,13 @@
   <footer>
     <span class="footer-logo">Ana Berrocal</span>
     <div class="footer-green"></div>
-    <span class="footer-copy">&copy; 2026   Design &amp; Photography</span>
+    <span class="footer-copy">&copy; 2026 Design &amp; Photography</span>
   </footer>
-
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">Close &times;</button>
+    <div class="lightbox-inner" id="lightbox-inner"></div>
+  </div>
   <script>
     const cursor = document.getElementById("cursor");
     const ring = document.getElementById("cursorRing");
@@ -995,6 +1347,49 @@
       });
     }, { threshold: 0.08 });
     reveals.forEach(el => observer.observe(el));
+
+    // LIGHTBOX
+    const lightbox = document.getElementById("lightbox");
+    const lightboxInner = document.getElementById("lightbox-inner");
+    const lightboxClose = document.getElementById("lightbox-close");
+
+    document.querySelectorAll("[data-lightbox]").forEach(el => {
+      el.style.cursor = "pointer";
+      const src = el.dataset.lightbox;
+      el.addEventListener("click", () => {
+        lightboxInner.innerHTML = `<img src="${src}" alt="">`;
+        lightbox.classList.add("active");
+      });
+    });
+
+    document.querySelectorAll("[data-lightbox-pdf]").forEach(el => {
+      el.style.cursor = "pointer";
+      const src = el.dataset.lightboxPdf;
+      el.addEventListener("click", () => {
+        lightboxInner.innerHTML = `<iframe src="${src}"></iframe>`;
+        lightbox.classList.add("active");
+      });
+    });
+
+    lightboxClose.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+      lightboxInner.innerHTML = "";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("active");
+        lightboxInner.innerHTML = "";
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        lightbox.classList.remove("active");
+        lightboxInner.innerHTML = "";
+      }
+    });
   </script>
 </body>
+
 </html>
